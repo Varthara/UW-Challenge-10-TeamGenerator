@@ -16,22 +16,23 @@ const addManager =() => {
             type: "input",
         },
         {
+            name: "id",
+            message: "What is the Manager's id number?",
+            type: "input",
+        },        
+        {
             name: "email",
             message: "What is the Manager's email address?",
             type: "input",
         },
-        {
-            name: "id",
-            message: "What is the Manager's id number?",
-            type: "input",
-        },
+
         {
             name: "officeNumber",
             message: "What is the Manager's office number?",
             type: "number",
         },
     ]).then((answers=>{
-        let manager = new Manager(answers.name, answers.email, answers.id, answers.officeNumber)
+        let manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         team.push(manager)
         start()
     }))
